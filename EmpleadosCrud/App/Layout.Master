@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Layout.Master.cs" Inherits="EmpleadosCrud.App.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>App Empleados</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <link href="css/miestilo.css" rel="stylesheet" />
+    <!-- Enlaces a estilo etc.-->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="estiloBody">
+    <form id="form1" runat="server">
+        <div>
+            <!--- Menu --->
+                <header class="estiloHeader">
+                    <nav class="menuNav">
+                        <ul class="menuUl">
+                            <li class="menuLi"> <a class="menuLink" href="./Default.aspx"> Home </a></li>
+                            <li class="menuLi"> <a class="menuLink" href="./Datos.aspx"> Datos </a></li>
+                            <li class="menuLi"> <a class="menuLink" href="./Formulario.aspx"> Formulario </a></li>
+                            <li class="menuLi"> <a class="menuLink" href="./Nosotros.aspx"> Nosotros </a></li>
+                        </ul>
+                    </nav>
+                </header>
+            <!--- Menu --->
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <!-- Footer -->
+                <footer class="estiloFooter">
+                    <h3 class="textoFooter"> by: Ricardo Antonio Ruiz Cardozo</h3>       
+                    <div class="contenedorGib">
+                        <div> 
+                            <a href="https://github.com/raruizc"> <img class="ico" src="pic/github.png" alt=""></a>
+                       </div> 
+                       <div> 
+                        <small> raruizc </small>
+                       </div>
+                    </div>
+                </footer>
+            <!--- Fin footer --->
+        </div>
+    </form>
+</body>
+</html>
