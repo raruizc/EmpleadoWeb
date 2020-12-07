@@ -13,7 +13,13 @@ namespace EmpleadosCrud.App
         GestionDatos datos = new GestionDatos();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                List<Empleado> listaEmpleados = datos.LeerTodos();
+                // Volcamos la lista a nuestro gv
+                gvEmpleados.DataSource = listaEmpleados;
+                gvEmpleados.DataBind();
+            }
         }
 
         protected void btnListarTodo_Click(object sender, EventArgs e)
@@ -43,6 +49,16 @@ namespace EmpleadosCrud.App
             else
             {
                 LabelBuscar.Text = "No existe el código en la BD";
+            }
+        }
+
+        protected void gvEmpleados_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if(e.CommandName == "Select")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                string valor = Convert.ToString(gvEmpleados.DataKeys[index].Value);
+                Response.Redirect("Formulario.aspx?id=" + valor);
             }
         }
     }

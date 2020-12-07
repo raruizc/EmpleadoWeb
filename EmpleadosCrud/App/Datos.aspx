@@ -15,7 +15,7 @@
             <a class="btnApp" href="#"> Editar </a>
             <a class="btnApp" href="#"> Borar </a>-->
             <div>
-                <asp:Button ID="btnListarTodo" runat="server" OnClick="btnListarTodo_Click" Text="Listar Empleados" class="btnApp"/>
+                <asp:Button ID="btnListarTodo" runat="server" OnClick="btnListarTodo_Click" Text="Listar Empleados" class="btnApp" Visible="False"/>
             </div>
 
             <div>
@@ -35,8 +35,11 @@
        
         <div class="contenedorDatos">
             <div class="contenedorGrid">
-            &nbsp;<asp:GridView cssclass="formatoGrid" ID="gvEmpleados" runat="server" CellPadding="3" ForeColor="Black" GridLines="Vertical" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" AllowPaging="True" OnPageIndexChanging="gvEmpleados_PageIndexChanging">
+            &nbsp;<asp:GridView cssclass="formatoGrid" ID="gvEmpleados" runat="server" CellPadding="3" ForeColor="Black" GridLines="Vertical" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" AllowPaging="True" OnPageIndexChanging="gvEmpleados_PageIndexChanging" DataKeyNames="Codigo" OnRowCommand="gvEmpleados_RowCommand">
                 <AlternatingRowStyle BackColor="#CCCCCC" />
+                    <Columns>
+                        <asp:ButtonField CommandName="Select" Text="Seleccionar" />
+                    </Columns>
                 <FooterStyle BackColor="#CCCCCC" />
                 <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
                 <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />

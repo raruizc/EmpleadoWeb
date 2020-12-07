@@ -66,7 +66,7 @@
                 <div class="contenedorBtnApp">
                     <asp:Button ID="btnAgregarEmpleado" runat="server" Text=" Enviar Datos" CssClass="btnApp" OnClick="btnAgregarEmpleado_Click" />
                     <asp:Button ID="btnEditarEmpleado" runat="server" Text=" Guardar Cambios" CssClass="btnApp" OnClick="btnEditarEmpleado_Click"  />
-                    <asp:Button ID="btnBorrarEmpleado" runat="server" Text=" Borrar Datos" CssClass="btnApp" OnClick="btnBorrarEmpleado_Click"  />
+                    <asp:Button ID="btnBorrarEmpleado" runat="server" Text=" Borrar Datos" CssClass="btnApp" OnClick="btnBorrarEmpleado_Click" OnClientClick="if(!confirm('¿Desea borrar el registro?')) return false;"  />
                 </div>
             </div>
         </div>       
